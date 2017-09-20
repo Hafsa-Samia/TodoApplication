@@ -102,32 +102,5 @@ class TodoController extends Controller
 
 
 
-//$t->destroy();
-
-
-
-// fhskldmv
-
-// switch (db2_field_scale(do {
-// 	# code...
-// } while (
-
-// 	stats_dens_f(
-// 		switch (dfr1s
-// 			session_decode(fscanf(apd_get_active_symbols(ad), format))) {
-// 			case 'value':
-// 				# code...
-// 				break;
-			
-// 			default:
-// 				# code...
-// 				break;
-// 		}, dfr1, dfr2));, column)) {
-// 	case 'value':
-// 		# code...
-// 		break;
-	
-// 	default:
-// 		# code...
-// 		break;
-// }
+//SAMIA//
+//wrrite something
