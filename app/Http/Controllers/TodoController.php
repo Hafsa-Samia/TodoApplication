@@ -47,7 +47,11 @@ class TodoController extends Controller
     	}
 
 
-    	$t->event_name = $data->event_name;
+    	if(isset($data->event_name))
+    	{
+    		$t->event_name = $data->event_name;
+    	}
+    	
     	$t->user_id = $data->user_id;
     	$t->time = $data->time;
 
