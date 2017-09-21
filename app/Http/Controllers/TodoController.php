@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Request;
 use App\Todo;
+
+
 
 class TodoController extends Controller
 {
@@ -33,6 +35,7 @@ class TodoController extends Controller
 
     }
 
+
     public function edit(Request $data)
     {
 
@@ -52,8 +55,14 @@ class TodoController extends Controller
     		$t->event_name = $data->event_name;
     	}
 
-    	$t->user_id = $data->user_id;
-    	$t->time = $data->time;
+        if(isset($data->user_id))
+        {
+    	   $t->user_id = $data->user_id;
+        }
+        if(isset($data->time))
+        {
+    	   $t->time = $data->time;
+        }
 
     	if($t->save())
     	{
@@ -65,9 +74,10 @@ class TodoController extends Controller
     	}
 
 
-
     	return $t;
     }
+
+
 
     public function deleted(Request $data)
     {
@@ -87,7 +97,7 @@ class TodoController extends Controller
     	if($t->user_id == $data->user_id)
         {
 
-    		Todo::destroy($data->todo_id);
+    		Todo::destroy($t->todo_id);
     		return 'deleted';
         }
         else
