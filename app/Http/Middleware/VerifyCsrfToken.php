@@ -14,7 +14,10 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
     	'add',
     	'update',
-        'delete'
+        'delete',
+        'add_customer',
+        'update_customer', 
+        'delete_customer'
         //
     ];
 }

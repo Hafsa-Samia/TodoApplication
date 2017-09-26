@@ -22,4 +22,12 @@ Route::post('/add', 'TodoController@store');
 Route::post('/update', 'TodoController@edit');
 Route::post('/delete', 'TodoController@deleted');
 
+Route::get('/index_customer','CustomerController@index');
+Route::post('/add_customer','CustomerController@store');
+Route::post('/update_customer','CustomerController@edit');
+Route::post('/delete_customer','CustomerController@delete');
+
+
+
+
 

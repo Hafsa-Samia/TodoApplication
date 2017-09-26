@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use App\Todo;
+use App\Todo; 
+
 
 
 
@@ -24,6 +25,7 @@ class TodoController extends Controller
     	$t['event_name'] = $data->event_name;
     	$t->user_id = $data->user_id;
     	$t->time = $data->time;
+        $t->message = $data->message;
     	if($t->save())
     	{
     		return 'Saved Successfully';
