@@ -40,25 +40,30 @@ class CustomerController extends Controller
          }
         catch(\Exception $e)
         {
-            'This id Doesnot exist';
+            return 'This id Doesnot exist';
         }
+
 
         if(isset($data->customer_name))
         {
             $t->customer_name = $data->customer_name;
         }
+
         if(isset($data->customer_id))
         {
             $t->customer_id = $data->customer_id;
         }
+
         if(isset($data->email))
         {
             $t->email = $data->email;
         }
+
         if(isset($data->address))
         {
             $t->address = $data->address;
         }
+
         if(isset($data->phone))
         {
             $t->phone = $data->phone;
@@ -66,7 +71,7 @@ class CustomerController extends Controller
 
         if($t->save())
         {
-            return 'saved succesfully';
+            return 'Updated succesfully';
         }
         else
         {
@@ -75,7 +80,7 @@ class CustomerController extends Controller
 
     }
 
-    public function delete()
+    public function delete(Request $data)
     {
         try
         {
@@ -84,20 +89,12 @@ class CustomerController extends Controller
         }
         catch(\Exception $e)
         {
-            return 'this data not exist';
+            return 'This data not exist';
         }
 
-
-        if($t->customer_id == $data->customer_id)
-        {
-
-            Todo::destroy($t->require_id);
-            return 'Deleted';
-        }
-        else
-        {
-            return 'No access';
-        }
+         Customer::destroy($t->id);
+         return 'Deleted';
+        
 
     }
 }
